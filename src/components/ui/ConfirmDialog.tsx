@@ -37,7 +37,6 @@ export function ConfirmDialog({
       open={open}
       onClose={onClose}
       title={title}
-      description={description}
       size="sm"
       footer={
         <>
@@ -54,9 +53,9 @@ export function ConfirmDialog({
         </>
       }
     >
-      <p className="text-sm text-muted-foreground">
-        This action can be reviewed later from your data.
-      </p>
+      {description && (
+        <p className="text-sm text-muted-foreground">{description}</p>
+      )}
     </Modal>
   );
 }
