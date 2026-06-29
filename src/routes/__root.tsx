@@ -17,6 +17,7 @@ import "@fontsource/inter/700.css";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { AuthProvider } from "../context/AuthContext";
+import { ThemeProvider } from "../hooks/useTheme";
 import { Toaster } from "../components/ui/Toaster";
 
 function NotFoundComponent() {
