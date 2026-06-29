@@ -61,11 +61,11 @@ function SettingsPage() {
         </div>
 
         <form onSubmit={submit} className="space-y-4">
-          <Field label="Full name" error={errors.name?.message}>
-            <Input {...register("name")} placeholder="Jane Doe" />
+          <Field label="Full name" htmlFor="name" error={errors.name?.message}>
+            <Input id="name" {...register("name")} placeholder="Jane Doe" />
           </Field>
-          <Field label="Email" error={errors.email?.message}>
-            <Input {...register("email")} type="email" placeholder="jane@acme.com" />
+          <Field label="Email" htmlFor="email" error={errors.email?.message}>
+            <Input id="email" {...register("email")} type="email" placeholder="jane@acme.com" />
           </Field>
           <Button type="submit" isLoading={isSubmitting} disabled={!isDirty}>
             Save changes
