@@ -22,6 +22,7 @@ import { Skeleton } from "@/components/ui/Skeleton";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { Avatar } from "@/components/ui/Avatar";
 import { statusLabel, formatDate, fromNow, isOverdue, activityText } from "@/lib/format";
+import type { TaskStatus } from "@/lib/types";
 import { useAuth } from "@/context/AuthContext";
 
 export const Route = createFileRoute("/_app/dashboard")({
@@ -89,7 +90,7 @@ function DashboardPage() {
                     />
                     <XAxis
                       dataKey="status"
-                      tickFormatter={(v) => statusLabel(v)}
+                      tickFormatter={(v) => statusLabel(v as TaskStatus)}
                       tickLine={false}
                       axisLine={false}
                       tick={{ fontSize: 12, fill: "var(--color-muted-foreground)" }}
@@ -102,7 +103,7 @@ function DashboardPage() {
                         borderRadius: 8,
                         fontSize: 12,
                       }}
-                      labelFormatter={(v) => statusLabel(v as string)}
+                      labelFormatter={(v) => statusLabel(v as TaskStatus)}
                     />
                     <Bar dataKey="count" radius={[6, 6, 0, 0]}>
                       {data.statusDistribution.map((entry) => (
