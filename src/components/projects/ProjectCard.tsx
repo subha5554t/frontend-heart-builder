@@ -27,7 +27,7 @@ export function ProjectCard({ project, onEdit, onArchive }: ProjectCardProps) {
 
   const progress =
     project.taskCount > 0
-      ? Math.round((project.completedCount / project.taskCount) * 100)
+      ? Math.round((project.doneCount / project.taskCount) * 100)
       : 0;
 
   return (
@@ -89,7 +89,7 @@ export function ProjectCard({ project, onEdit, onArchive }: ProjectCardProps) {
         <div className="mt-4 space-y-1.5">
           <div className="flex items-center justify-between text-xs text-muted-foreground">
             <span>
-              {project.completedCount}/{project.taskCount} tasks
+              {project.doneCount}/{project.taskCount} tasks
             </span>
             <span>{progress}%</span>
           </div>
